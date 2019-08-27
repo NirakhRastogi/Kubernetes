@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: envvarpod
+spec:
+  containers:
+    - name: env-var-pod-demo
+      image: bash
+      env:
+        - name: HELLO_WORLD
+          value: "Hello World"
+      command: ["echo"]
+      args: ["$(HELLO_WORLD)"]
